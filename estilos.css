@@ -1,0 +1,143 @@
+/* ===== Reset y Base ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f4ef;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Header ===== */
+header {
+    background: linear-gradient(135deg, #4a2c2a, #6b3a2a);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+/* ===== Secciones ===== */
+main section {
+    padding: 40px 20px;
+    margin-top: 30px;
+}
+
+main section h2 {
+    text-align: center;
+    color: #4a2c2a;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.bienvenida {
+    background: #fff;
+    border-radius: 8px;
+    text-align: center;
+    padding: 30px;
+}
+
+.bienvenida p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ===== Productos ===== */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.producto h3 {
+    color: #6b3a2a;
+    margin-bottom: 8px;
+}
+
+.producto p {
+    margin-bottom: 5px;
+}
+
+.producto p.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4a2c2a;
+}
+
+/* ===== Tabla Horarios ===== */
+.tabla-horas {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.tabla-horas td {
+    padding: 12px 20px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-horas tr:last-child td {
+    border-bottom: none;
+}
+
+.tabla-horas td:first-child {
+    font-weight: bold;
+    color: #4a2c2a;
+}
+
+/* ===== Contacto ===== */
+.info-contacto {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: inline-block;
+}
+
+.info-contacto p {
+    margin: 8px 0;
+}
+
+/* ===== Footer ===== */
+footer {
+    background: #4a2c2a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
