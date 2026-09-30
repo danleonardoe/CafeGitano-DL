@@ -18,95 +18,172 @@ body {
     padding: 0 20px;
 }
 
-/* ===== Header ===== */
+/* ===== Header MEJORA 1: Banner impactante ===== */
 header {
-    background: linear-gradient(135deg, #4a2c2a, #6b3a2a);
+    background: linear-gradient(135deg, #2c1810, #4a2c2a, #6b3a2a);
     color: white;
     text-align: center;
     padding: 40px 20px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255,255,255,0.05) 0%, transparent 40%);
 }
 
 header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+header .header-accent {
+    width: 60px; height: 4px;
+    background: #e74c3c;
+    margin: 15px auto;
+    border-radius: 2px;
+    position: relative;
 }
 
 header p {
-    font-size: 1.1rem;
-    opacity: 0.85;
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 1px;
+    position: relative;
 }
 
 /* ===== Secciones ===== */
 main section {
-    padding: 40px 20px;
-    margin-top: 30px;
+    padding: 45px 20px;
+    margin-top: 35px;
 }
 
 main section h2 {
     text-align: center;
     color: #4a2c2a;
-    margin-bottom: 25px;
-    font-size: 1.8rem;
+    margin-bottom: 35px;
+    font-size: 2rem;
+    font-family: 'Georgia', serif;
+    position: relative;
 }
 
+main section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #e74c3c;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+/* ===== Bienvenida MEJORA 2 ===== */
 .bienvenida {
     background: #fff;
-    border-radius: 8px;
+    border-radius: 12px;
     text-align: center;
-    padding: 30px;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid rgba(0,0,0,0.05);
 }
 
 .bienvenida p {
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 600px;
+    font-size: 1.15rem;
+    color: #555;
+    max-width: 650px;
     margin: 0 auto;
+    font-weight: 300;
 }
 
-/* ===== Productos ===== */
+/* ===== Productos MEJORA 2: Cards con sombras suaves ===== */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
 }
 
 .producto {
     background: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.producto::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4a2c2a, #6b3a2a);
+    border-radius: 12px 12px 0 0;
+    opacity: 0.5;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(74, 44, 42, 0.15);
+    border-color: rgba(74, 44, 42, 0.12);
+}
+
+.producto:hover::before {
+    opacity: 1;
 }
 
 .producto h3 {
-    color: #6b3a2a;
-    margin-bottom: 8px;
+    font-family: 'Georgia', serif;
+    color: #4a2c2a;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
 }
 
 .producto p {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .producto p.precio {
-    font-size: 1.2rem;
-    font-weight: bold;
+    font-size: 1.3rem;
+    font-weight: 600;
     color: #4a2c2a;
+    margin-top: 5px;
 }
 
-/* ===== Tabla Horarios ===== */
+/* ===== Tabla Horarios MEJORA 2 ===== */
 .tabla-horas {
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     margin: 0 auto;
     border-collapse: collapse;
     background: white;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.tabla-horas tr {
+    transition: background-color 0.2s;
+}
+
+.tabla-horas tr:hover {
+    background-color: #f5f0eb;
 }
 
 .tabla-horas td {
-    padding: 12px 20px;
+    padding: 14px 20px;
     text-align: left;
     border-bottom: 1px solid #eee;
 }
@@ -116,90 +193,145 @@ main section h2 {
 }
 
 .tabla-horas td:first-child {
-    font-weight: bold;
+    font-weight: 600;
     color: #4a2c2a;
+    font-family: 'Georgia', serif;
 }
 
-/* ===== Contacto ===== */
+/* ===== Contacto MEJORA 2 ===== */
 .info-contacto {
     background: white;
-    border-radius: 8px;
-    padding: 25px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     display: inline-block;
+    border: 1px solid rgba(0,0,0,0.06);
 }
 
 .info-contacto p {
-    margin: 8px 0;
+    margin: 10px 0;
+    font-size: 1.05rem;
 }
 
-/* ===== Footer ===== */
+.info-contacto strong {
+    color: #4a2c2a;
+}
+
+/* ===== Footer MEJORA 2 ===== */
 footer {
-    background: #4a2c2a;
+    background: #2c1810;
     color: white;
     text-align: center;
-    padding: 20px;
+    padding: 25px;
     margin-top: 40px;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
 
-/* ===== Promociones ===== */
+footer p {
+    opacity: 0.85;
+    font-size: 0.95rem;
+}
+
+/* ===== Promociones MEJORA 2 ===== */
 .promociones {
-    background: linear-gradient(135deg, #6b3a2a 0%, #8b4a3a 100%);
+    background: linear-gradient(135deg, #2c1810, #4a2c2a, #6b3a2a);
     color: white;
-    padding: 40px 20px;
-    margin-top: 30px;
+    padding: 45px 20px;
+    margin-top: 35px;
+    position: relative;
+    overflow: hidden;
+}
+
+.promociones::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255,255,255,0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(255,255,255,0.03) 0%, transparent 40%);
 }
 
 .promociones h2 {
     text-align: center;
     color: white;
-    margin-bottom: 25px;
+    margin-bottom: 35px;
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    position: relative;
+}
+
+.promociones h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #e74c3c;
+    margin: 15px auto 0;
+    border-radius: 2px;
 }
 
 .promo {
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 25px;
     text-align: center;
     border: 1px solid rgba(255,255,255,0.2);
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .promo:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
     background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    border-color: rgba(255,255,255,0.3);
 }
 
 .promo .tag {
     display: inline-block;
     background: #e74c3c;
     color: white;
-    padding: 2px 10px;
-    border-radius: 3px;
+    padding: 3px 12px;
+    border-radius: 4px;
     font-size: 0.75rem;
-    font-weight: bold;
-    margin-bottom: 8px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
 }
 
 .promo h3 {
+    font-family: 'Georgia', serif;
     color: #fff;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    font-size: 1.25rem;
 }
 
 .promo .precio {
-    font-size: 1.3rem;
-    font-weight: bold;
-    margin-bottom: 8px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 10px;
     color: #ffd700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .promo .anterior {
     text-decoration: line-through;
     opacity: 0.6;
-    font-size: 0.9rem;
+    font-size: 1rem;
     margin-left: 10px;
+    color: rgba(255,255,255,0.7);
 }
 
 .promo p:last-child {
-    opacity: 0.85;
+    opacity: 0.9;
+    font-size: 1rem;
 }
